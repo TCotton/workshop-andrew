@@ -9,3 +9,9 @@ variable "stage_name" {
   type        = string
   default     = "dev"
 }
+
+variable "service_name" {
+  description = "Service name"
+  type        = string
+  default     = "workshop-andrew"
+}
