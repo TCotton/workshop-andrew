@@ -5,5 +5,5 @@ output "api_gateway_url" {
 
 output "restaurants_table" {
   description = "The name of the restaurants table"
-  value       = "${module.dynamodb_restaurants_table.dynamodb_table_id}"
+  value       = module.dynamodb_restaurants_table.dynamodb_table_id
 }

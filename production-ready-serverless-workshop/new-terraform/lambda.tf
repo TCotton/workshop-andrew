@@ -1,9 +1,8 @@
-
 module "get_index_lambda" {
   source = "terraform-aws-modules/lambda/aws"
   version = "~> 7.0"
 
-  function_name = "${var.service_name}-${var.stage_name}-get-index"
+  function_name = "${var.service_name}-get-index"
   handler       = "index.handler"
   runtime       = "nodejs20.x"
 
@@ -29,7 +28,7 @@ module "get_index_lambda" {
     }
   }
 
-  cloudwatch_logs_retention_in_days = 7
+  cloudwatch_logs_retention_in_days = 30
 }
 
 module "get_restaurants_lambda" {
@@ -68,4 +67,5 @@ module "get_restaurants_lambda" {
       source_arn = "${aws_api_gateway_rest_api.main.execution_arn}/${var.stage_name}/GET/restaurants"
     }
   }
+  cloudwatch_logs_retention_in_days = 30
 }
