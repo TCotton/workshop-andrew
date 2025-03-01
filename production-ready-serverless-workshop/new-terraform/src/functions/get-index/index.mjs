@@ -24,6 +24,7 @@ const getRestaurants = async () => {
 export const handler = async (event, context) => {
     const template = loadHtml()
     const restaurants = await getRestaurants()
+    console.log(restaurants);
     const dayOfWeek = days[new Date().getDay()]
     const html = Mustache.render(template, { dayOfWeek, restaurants })
     const response = {

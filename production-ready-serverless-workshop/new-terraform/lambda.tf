@@ -35,7 +35,7 @@ module "get_restaurants_lambda" {
   source  = "terraform-aws-modules/lambda/aws"
   version = "~> 7.0"
 
-  function_name = "${var.service_name}-${var.stage_name}-get-restaurants"
+  function_name = "${var.service_name}-get-restaurants"
   handler       = "index.handler"
   runtime       = "nodejs20.x"
 
